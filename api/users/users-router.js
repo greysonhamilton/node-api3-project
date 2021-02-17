@@ -1,5 +1,6 @@
 const express = require('express');
-
+const users = require("../users/users-model")
+const { logger, validateUserId, validateUser, validatePost } = require("../middleware/middleware")
 const router = express.Router();
 
 router.get('/', (req, res) => {
