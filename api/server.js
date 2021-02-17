@@ -1,4 +1,5 @@
 const express = require('express');
+const logger = require("./middleware/middleware")
 const postsRouter = require("./posts/posts-router")
 const usersRouter = require("./users/users-router")
 
@@ -13,6 +14,7 @@ server.get('/', (req, res) => {
 });
 
 server.use(express.json())
+server.use(logger())
 server.use((err, req, res, next) => {
 
   console.log(err)
